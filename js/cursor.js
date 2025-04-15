@@ -26,16 +26,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Smooth outline movement with trailing effect
     function updateCursorOutline() {
-        const dx = cursorX - outlineX;
-        const dy = cursorY - outlineY;
+    const dx = cursorX - outlineX;
+    const dy = cursorY - outlineY;
 
+    // If the distance is small, snap directly
+    if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) {
+        outlineX = cursorX;
+        outlineY = cursorY;
+    } else {
         outlineX += dx * speed;
         outlineY += dy * speed;
-
-        cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px)`;
-
-        requestAnimationFrame(updateCursorOutline);
     }
+
+    cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px)`;
+
+    requestAnimationFrame(updateCursorOutline);
+}
+
     updateCursorOutline();
 
     // Enhanced hover effect for interactive elements
@@ -66,26 +73,26 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Custom cursor
-const cursor = {
-    dot: document.querySelector('.cursor-dot'),
-    outline: document.querySelector('.cursor-dot-outline'),
-    init: function() {
-        document.addEventListener('mousemove', (e) => {
-            this.dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-            this.outline.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-        });
+// const cursor = {
+//     dot: document.querySelector('.cursor-dot'),
+//     outline: document.querySelector('.cursor-dot-outline'),
+//     init: function() {
+//         document.addEventListener('mousemove', (e) => {
+//             this.dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+//             this.outline.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+//         });
         
-        document.addEventListener('mouseenter', () => {
-            this.dot.classList.add('visible');
-            this.outline.classList.add('visible');
-        });
+//         document.addEventListener('mouseenter', () => {
+//             this.dot.classList.add('visible');
+//             this.outline.classList.add('visible');
+//         });
         
-        document.addEventListener('mouseleave', () => {
-            this.dot.classList.remove('visible');
-            this.outline.classList.remove('visible');
-        });
-    }
-};
+//         document.addEventListener('mouseleave', () => {
+//             this.dot.classList.remove('visible');
+//             this.outline.classList.remove('visible');
+//         });
+//     }
+// };
 
-// Initialize cursor
-cursor.init(); 
+// // Initialize cursor
+// cursor.init(); 
