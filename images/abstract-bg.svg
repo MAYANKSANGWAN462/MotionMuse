@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0a0a0a"/>
+  <path d="M0 450C0 450 320 180 800 450C1280 720 1600 450 1600 450V900H0V450Z" fill="url(#paint0_linear)" fill-opacity="0.2"/>
+  <path d="M0 500C0 500 320 700 800 500C1280 300 1600 500 1600 500V900H0V500Z" fill="url(#paint1_linear)" fill-opacity="0.15"/>
+  <circle cx="400" cy="300" r="100" fill="#8A2BE2" fill-opacity="0.2"/>
+  <circle cx="1200" cy="200" r="150" fill="#8A2BE2" fill-opacity="0.1"/>
+  <circle cx="800" cy="500" r="200" fill="#8A2BE2" fill-opacity="0.05"/>
+  <path d="M200 700C250 600 350 650 400 500C450 350 550 400 600 300" stroke="#9D44FF" stroke-opacity="0.3" stroke-width="6"/>
+  <path d="M800 800C850 700 950 750 1000 600C1050 450 1150 500 1200 400" stroke="#9D44FF" stroke-opacity="0.3" stroke-width="6"/>
+  <path d="M400 800C450 700 550 750 600 600C650 450 750 500 800 400" stroke="#6A1FB0" stroke-opacity="0.2" stroke-width="8"/>
+  <defs>
+    <linearGradient id="paint0_linear" x1="800" y1="450" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9D44FF"/>
+      <stop offset="1" stop-color="#9D44FF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear" x1="800" y1="500" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6A1FB0"/>
+      <stop offset="1" stop-color="#6A1FB0" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg> 
