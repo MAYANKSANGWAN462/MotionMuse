@@ -1,0 +1,207 @@
+/* Floating particles animation for hero section */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--color-accent-neon);
+    box-shadow: 0 0 10px var(--color-accent), 0 0 20px var(--color-accent-neon);
+    opacity: 0;
+    animation: float-particle var(--duration) ease-in-out infinite;
+    z-index: 1;
+    mix-blend-mode: screen;
+}
+
+.particle:nth-child(1) {
+    width: 6px;
+    height: 6px;
+    left: 10%;
+    top: 20%;
+    --duration: 15s;
+    animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+    width: 8px;
+    height: 8px;
+    left: 20%;
+    top: 80%;
+    --duration: 20s;
+    animation-delay: 2s;
+}
+
+.particle:nth-child(3) {
+    width: 12px;
+    height: 12px;
+    left: 50%;
+    top: 30%;
+    --duration: 25s;
+    animation-delay: 5s;
+}
+
+.particle:nth-child(4) {
+    width: 5px;
+    height: 5px;
+    left: 70%;
+    top: 70%;
+    --duration: 18s;
+    animation-delay: 1s;
+}
+
+.particle:nth-child(5) {
+    width: 10px;
+    height: 10px;
+    left: 85%;
+    top: 20%;
+    --duration: 22s;
+    animation-delay: 7s;
+}
+
+.particle:nth-child(6) {
+    width: 7px;
+    height: 7px;
+    left: 35%;
+    top: 60%;
+    --duration: 16s;
+    animation-delay: 3s;
+}
+
+.particle:nth-child(7) {
+    width: 9px;
+    height: 9px;
+    left: 90%;
+    top: 50%;
+    --duration: 19s;
+    animation-delay: 8s;
+}
+
+.particle:nth-child(8) {
+    width: 14px;
+    height: 14px;
+    left: 15%;
+    top: 40%;
+    --duration: 23s;
+    animation-delay: 6s;
+}
+
+.particle:nth-child(9) {
+    width: 6px;
+    height: 6px;
+    left: 55%;
+    top: 85%;
+    --duration: 17s;
+    animation-delay: 4s;
+}
+
+.particle:nth-child(10) {
+    width: 8px;
+    height: 8px;
+    left: 40%;
+    top: 15%;
+    --duration: 21s;
+    animation-delay: 9s;
+}
+
+@keyframes float-particle {
+    0% {
+        transform: translateY(0) translateX(0) scale(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.8;
+        transform: translateY(-20vh) translateX(10vw) scale(1);
+    }
+    50% {
+        transform: translateY(-40vh) translateX(20vw) scale(1.5);
+        opacity: 0.6;
+    }
+    80% {
+        transform: translateY(-60vh) translateX(10vw) scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(0) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Glow effect for section titles and accents */
+.glow-text {
+    text-shadow: 0 0 5px var(--color-accent), 0 0 20px var(--color-accent-neon);
+    position: relative;
+    display: inline-block;
+}
+
+.glow-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--color-accent-neon), transparent 70%);
+    filter: blur(20px);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/* 3D Floating effect for cards and elements */
+.float-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateZ(10px);
+    box-shadow: var(--shadow-accent);
+}
+
+.float-3d:hover {
+    transform: perspective(1000px) rotateX(10deg) rotateY(-10deg) translateZ(20px);
+    box-shadow: var(--shadow-accent-lg);
+}
+
+/* Accent elements */
+.accent-shape {
+    position: absolute;
+    background: linear-gradient(45deg, var(--color-accent), var(--color-accent-neon));
+    border-radius: 50%;
+    filter: blur(40px);
+    mix-blend-mode: screen;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.accent-shape.top-right {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -100px;
+    animation: pulse-grow 10s ease-in-out infinite alternate;
+}
+
+.accent-shape.bottom-left {
+    width: 400px;
+    height: 400px;
+    bottom: -200px;
+    left: -200px;
+    animation: pulse-grow 15s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes pulse-grow {
+    0% {
+        transform: scale(0.8) rotate(0deg);
+        opacity: 0.2;
+    }
+    100% {
+        transform: scale(1.2) rotate(45deg);
+        opacity: 0.4;
+    }
+} 

@@ -1,0 +1,66 @@
+/* Custom cursor styles */
+.cursor-dot,
+.cursor-dot-outline {
+    pointer-events: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-accent-neon);
+    box-shadow: 0 0 10px var(--color-accent);
+}
+
+.cursor-dot-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--color-accent);
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, border 0.3s ease;
+}
+
+/* Cursor styles for hoverable elements */
+.hoverable {
+    cursor: none !important;
+}
+
+.hoverable ~ .cursor-dot {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.hoverable ~ .cursor-dot-outline {
+    transform: translate(-50%, -50%) scale(1.5);
+    border-color: var(--color-accent-light);
+}
+
+/* Cursor styles for clickable elements */
+.clickable {
+    cursor: none !important;
+}
+
+.clickable ~ .cursor-dot {
+    transform: translate(-50%, -50%) scale(2);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.clickable ~ .cursor-dot-outline {
+    transform: translate(-50%, -50%) scale(0.5);
+    background-color: var(--color-accent-light);
+    opacity: 0.2;
+}
+
+/* Hide custom cursor on mobile devices */
+@media (max-width: 768px) {
+    .cursor-dot,
+    .cursor-dot-outline {
+        display: none;
+    }
+} 
